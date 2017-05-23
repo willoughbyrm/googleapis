@@ -35,15 +35,34 @@ nodejs:
   gapic_code_dir: ${REPOROOT}/artman/output/js/dlp-v2beta1
   git_repos:
     nodejs:
-      gapic_component: src/v2beta1
-      gapic_subpath: packages/dlp/src/v2beta1
       location: git@github.com:GoogleCloudPlatform/google-cloud-node.git
+      paths:
+        - src: package.json
+          dest: packages/dlp/package.json
+        - src: src
+          dest: packages/dlp/src
+        - src: test/test.js
+          dest: packages/dlp/test/gapic-v2beta1.js
     staging:
-      gapic_subpath: generated/nodejs/google-cloud-node/packages/dlp
+      paths:
+        - dest: generated/nodejs/google-cloud-node/packages/dlp
   skip_packman: True
 python:
   gapic_code_dir: ${REPOROOT}/artman/output/gapic-google-cloud-dlp-v2beta1
   git_repos:
     staging:
-      gapic_subpath: generated/python/gapic-google-cloud-dlp-v2beta1
-      grpc_subpath: generated/python/proto-google-cloud-dlp-v2beta1
+      paths:
+        - dest: generated/python/gapic-google-cloud-dlp-v2beta1
+        - artifact: grpc
+          dest: generated/python/proto-google-cloud-dlp-v2beta1
+    python:
+      location: git@github.com:GoogleCloudPlatform/google-cloud-python.git
+      paths:
+        - src: generated/python/gapic-google-cloud-dlp-v2beta1/google/cloud/gapic
+          dest: dlp/google/cloud/gapic
+        - src: generated/python/test/google/cloud/gapic/dlp/v2beta2
+          dest: dlp/tests/gapic
+        - artifact: grpc
+          src: generated/python/gapic-google-cloud-dlp-v2beta1/google/cloud/proto
+          dest: dlp/google/cloud/proto
+
