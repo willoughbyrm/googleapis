@@ -45,7 +45,7 @@ nodejs:
           dest: packages/dlp/test/gapic-v2beta1.js
     staging:
       paths:
-        - dest: generated/nodejs/google-cloud-node/packages/dlp
+        - dest: generated/nodejs/dlp
   skip_packman: True
 python:
   gapic_code_dir: ${REPOROOT}/artman/output/gapic-google-cloud-dlp-v2beta1
@@ -65,4 +65,3 @@ python:
         - artifact: grpc
           src: generated/python/gapic-google-cloud-dlp-v2beta1/google/cloud/proto
           dest: dlp/google/cloud/proto
-

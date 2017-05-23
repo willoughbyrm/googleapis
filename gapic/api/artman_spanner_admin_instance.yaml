@@ -30,7 +30,7 @@ go:
         - spanner/admin/instance/apiv1
     staging:
       paths:
-        - generated/go/google-spanner-admin-instance-v1
+        - generated/go/vendor/cloud.google.com/go/google-spanner-admin-instance-v1
 java:
   gapic_code_dir: ${REPOROOT}/artman/output/java/google-cloud-spanner-admin-instance
   git_repos:
@@ -51,7 +51,7 @@ nodejs:
           dest: packages/spanner/src/admin/instance
     staging:
       paths:
-        - generated/nodejs/google-cloud-node/packages/spanner-admin-instance
+        - generated/nodejs/spanner-admin-instance
   skip_packman: True
 php:
   gapic_code_dir: ${REPOROOT}/artman/output/gcloud-php-cloud-spanner-admin-instance

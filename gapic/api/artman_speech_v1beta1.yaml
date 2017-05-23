@@ -28,7 +28,7 @@ go:
         - speech/apiv1beta1
     staging:
       paths:
-        - generated/go/google-speech-v1beta1
+        - generated/go/vendor/cloud.google.com/go/google-speech-v1beta1
 java:
   gapic_code_dir: ${REPOROOT}/artman/output/java/google-cloud-speech
   git_repos:
@@ -44,7 +44,7 @@ nodejs:
   git_repos:
     staging:
       paths:
-        - generated/nodejs/google-cloud-node/packages/speech-v1beta1
+        - generated/nodejs/speech-v1beta1
   skip_packman: True
 php:
   gapic_code_dir: ${REPOROOT}/artman/output/gcloud-php-cloud-speech
