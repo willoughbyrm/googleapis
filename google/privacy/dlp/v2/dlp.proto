@@ -49,7 +49,7 @@ option php_namespace = "Google\\Cloud\\Dlp\\V2";
 // https://cloud.google.com/dlp/docs/.
 service DlpService {
   option (google.api.default_host) = "dlp.googleapis.com";
-  option (google.api.oauth_scopes) = "https://www.googleapis.com/auth/cloud-platform
+  option (google.api.oauth_scopes) = "https://www.googleapis.com/auth/cloud-platform";
   
   // Finds potentially sensitive info in content.
   // This method has limits on input size, processing time, and output size.
