@@ -4,23 +4,20 @@ name: dialogflow.googleapis.com
 title: Dialogflow API
 
 apis:
-- name: google.cloud.dialogflow.v2beta1.Agents
-- name: google.cloud.dialogflow.v2beta1.Contexts
-- name: google.cloud.dialogflow.v2beta1.Documents
-- name: google.cloud.dialogflow.v2beta1.EntityTypes
-- name: google.cloud.dialogflow.v2beta1.Intents
-- name: google.cloud.dialogflow.v2beta1.KnowledgeBases
-- name: google.cloud.dialogflow.v2beta1.SessionEntityTypes
-- name: google.cloud.dialogflow.v2beta1.Sessions
+- name: google.cloud.dialogflow.v2.Agents
+- name: google.cloud.dialogflow.v2.Contexts
+- name: google.cloud.dialogflow.v2.EntityTypes
+- name: google.cloud.dialogflow.v2.Intents
+- name: google.cloud.dialogflow.v2.SessionEntityTypes
+- name: google.cloud.dialogflow.v2.Sessions
 
 types:
-- name: google.cloud.dialogflow.v2beta1.BatchUpdateEntityTypesResponse
-- name: google.cloud.dialogflow.v2beta1.BatchUpdateIntentsResponse
-- name: google.cloud.dialogflow.v2beta1.ExportAgentResponse
-- name: google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata
-- name: google.cloud.dialogflow.v2beta1.OriginalDetectIntentRequest
-- name: google.cloud.dialogflow.v2beta1.WebhookRequest
-- name: google.cloud.dialogflow.v2beta1.WebhookResponse
+- name: google.cloud.dialogflow.v2.BatchUpdateEntityTypesResponse
+- name: google.cloud.dialogflow.v2.BatchUpdateIntentsResponse
+- name: google.cloud.dialogflow.v2.ExportAgentResponse
+- name: google.cloud.dialogflow.v2.OriginalDetectIntentRequest
+- name: google.cloud.dialogflow.v2.WebhookRequest
+- name: google.cloud.dialogflow.v2.WebhookResponse
 
 documentation:
   summary: |-
@@ -70,81 +67,56 @@ documentation:
 
 backend:
   rules:
-  - selector: 'google.cloud.dialogflow.v2beta1.Agents.*'
+  - selector: 'google.cloud.dialogflow.v2.Agents.*'
     deadline: 60.0
-  - selector: 'google.cloud.dialogflow.v2beta1.Contexts.*'
+  - selector: 'google.cloud.dialogflow.v2.Contexts.*'
     deadline: 60.0
-  - selector: 'google.cloud.dialogflow.v2beta1.Documents.*'
+  - selector: 'google.cloud.dialogflow.v2.EntityTypes.*'
     deadline: 60.0
-  - selector: 'google.cloud.dialogflow.v2beta1.EntityTypes.*'
+  - selector: 'google.cloud.dialogflow.v2.Intents.*'
     deadline: 60.0
-  - selector: 'google.cloud.dialogflow.v2beta1.Intents.*'
+  - selector: 'google.cloud.dialogflow.v2.SessionEntityTypes.*'
     deadline: 60.0
-  - selector: 'google.cloud.dialogflow.v2beta1.KnowledgeBases.*'
-    deadline: 60.0
-  - selector: 'google.cloud.dialogflow.v2beta1.SessionEntityTypes.*'
-    deadline: 60.0
-  - selector: google.cloud.dialogflow.v2beta1.Sessions.DetectIntent
+  - selector: google.cloud.dialogflow.v2.Sessions.DetectIntent
     deadline: 230.0
-  - selector: google.cloud.dialogflow.v2beta1.Sessions.StreamingDetectIntent
+  - selector: google.cloud.dialogflow.v2.Sessions.StreamingDetectIntent
     deadline: 230.0
   - selector: 'google.longrunning.Operations.*'
     deadline: 60.0
 
-http:
-  rules:
-  - selector: google.longrunning.Operations.GetOperation
-    get: '/v2beta1/{name=projects/*/operations/*}'
-    additional_bindings:
-    - get: '/v2beta1/{name=projects/*/locations/*/operations/*}'
-  - selector: google.longrunning.Operations.ListOperations
-    get: '/v2beta1/{name=projects/*}/operations'
-    additional_bindings:
-    - get: '/v2beta1/{name=projects/*/locations/*}/operations'
-
 authentication:
   rules:
-  - selector: 'google.cloud.dialogflow.v2beta1.Agents.*'
+  - selector: 'google.cloud.dialogflow.v2.Agents.*'
     oauth:
       canonical_scopes: |-
         https://www.googleapis.com/auth/cloud-platform,
         https://www.googleapis.com/auth/dialogflow
-  - selector: 'google.cloud.dialogflow.v2beta1.Contexts.*'
+  - selector: 'google.cloud.dialogflow.v2.Contexts.*'
     oauth:
       canonical_scopes: |-
         https://www.googleapis.com/auth/cloud-platform,
         https://www.googleapis.com/auth/dialogflow
-  - selector: 'google.cloud.dialogflow.v2beta1.Documents.*'
+  - selector: 'google.cloud.dialogflow.v2.EntityTypes.*'
     oauth:
       canonical_scopes: |-
         https://www.googleapis.com/auth/cloud-platform,
         https://www.googleapis.com/auth/dialogflow
-  - selector: 'google.cloud.dialogflow.v2beta1.EntityTypes.*'
+  - selector: 'google.cloud.dialogflow.v2.Intents.*'
     oauth:
       canonical_scopes: |-
         https://www.googleapis.com/auth/cloud-platform,
         https://www.googleapis.com/auth/dialogflow
-  - selector: 'google.cloud.dialogflow.v2beta1.Intents.*'
+  - selector: 'google.cloud.dialogflow.v2.SessionEntityTypes.*'
     oauth:
       canonical_scopes: |-
         https://www.googleapis.com/auth/cloud-platform,
         https://www.googleapis.com/auth/dialogflow
-  - selector: 'google.cloud.dialogflow.v2beta1.KnowledgeBases.*'
+  - selector: google.cloud.dialogflow.v2.Sessions.DetectIntent
     oauth:
       canonical_scopes: |-
         https://www.googleapis.com/auth/cloud-platform,
         https://www.googleapis.com/auth/dialogflow
-  - selector: 'google.cloud.dialogflow.v2beta1.SessionEntityTypes.*'
-    oauth:
-      canonical_scopes: |-
-        https://www.googleapis.com/auth/cloud-platform,
-        https://www.googleapis.com/auth/dialogflow
-  - selector: google.cloud.dialogflow.v2beta1.Sessions.DetectIntent
-    oauth:
-      canonical_scopes: |-
-        https://www.googleapis.com/auth/cloud-platform,
-        https://www.googleapis.com/auth/dialogflow
-  - selector: google.cloud.dialogflow.v2beta1.Sessions.StreamingDetectIntent
+  - selector: google.cloud.dialogflow.v2.Sessions.StreamingDetectIntent
     oauth:
       canonical_scopes: |-
         https://www.googleapis.com/auth/cloud-platform,
