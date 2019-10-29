@@ -533,12 +533,7 @@ message ListInstancesResponse {
 message UpdateInstanceRequest {
   // Required. The instance to update, which must always include the instance
   // name.  Otherwise, only fields mentioned in [][google.spanner.admin.instance.v1.UpdateInstanceRequest.field_mask] need be included.
-  Instance instance = 1 [
-    (google.api.field_behavior) = REQUIRED,
-    (google.api.resource_reference) = {
-      type: "spanner.googleapis.com/Instance"
-    }
-  ];
+  Instance instance = 1 [(google.api.field_behavior) = REQUIRED];
 
   // Required. A mask specifying which fields in [][google.spanner.admin.instance.v1.UpdateInstanceRequest.instance] should be updated.
   // The field mask must always be specified; this prevents any future fields in
