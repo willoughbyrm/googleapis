@@ -4,6 +4,7 @@ common:
   organization_name: google-cloud
   service_yaml: spanner.yaml
   gapic_yaml: v1/spanner_gapic.yaml
+  proto_package: google.spanner.v1
   src_proto_paths:
   - v1
   proto_deps:
