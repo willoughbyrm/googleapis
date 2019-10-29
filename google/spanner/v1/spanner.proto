@@ -877,3 +877,11 @@ message RollbackRequest {
   // Required. The transaction to roll back.
   bytes transaction_id = 2 [(google.api.field_behavior) = REQUIRED];
 }
+
+// The Database resource is defined in `google.spanner.admin.database.v1`.
+// Because this is a separate, independent API (technically), we redefine
+// the resource name pattern here.
+option (google.api.resource_definition) = {
+  type: "spanner.googleapis.com/Database"
+  pattern: "projects/{project}/instances/{instance}/databases/{database}"
+};

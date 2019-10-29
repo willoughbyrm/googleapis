@@ -373,3 +373,11 @@ message GetDatabaseDdlResponse {
   // specified in the request.
   repeated string statements = 1;
 }
+
+// The Instance resource is defined in `google.spanner.admin.database.v1`.
+// Because this is a separate, independent API (technically), we redefine
+// the resource name pattern here.
+option (google.api.resource_definition) = {
+  type: "spanner.googleapis.com/Instance"
+  pattern: "projects/{project}/instances/{instance}"
+};
