@@ -264,12 +264,9 @@ message CreateDatabaseRequest {
 // [CreateDatabase][google.spanner.admin.database.v1.DatabaseAdmin.CreateDatabase].
 message CreateDatabaseMetadata {
   // The database being created.
-  string database = 1 [
-    (google.api.field_behavior) = REQUIRED,
-    (google.api.resource_reference) = {
-      type: "spanner.googleapis.com/Database"
-    }
-  ];
+  string database = 1 [(google.api.resource_reference) = {
+    type: "spanner.googleapis.com/Database"
+  }];
 }
 
 // The request for [GetDatabase][google.spanner.admin.database.v1.DatabaseAdmin.GetDatabase].
@@ -338,12 +335,9 @@ message UpdateDatabaseDdlRequest {
 // [UpdateDatabaseDdl][google.spanner.admin.database.v1.DatabaseAdmin.UpdateDatabaseDdl].
 message UpdateDatabaseDdlMetadata {
   // The database being modified.
-  string database = 1 [
-    (google.api.field_behavior) = REQUIRED,
-    (google.api.resource_reference) = {
-      type: "spanner.googleapis.com/Database"
-    }
-  ];
+  string database = 1 [(google.api.resource_reference) = {
+    type: "spanner.googleapis.com/Database"
+  }];
 
   // For an update this list contains all the statements. For an
   // individual statement, this list contains only that statement.
@@ -384,7 +378,7 @@ message GetDatabaseDdlResponse {
   repeated string statements = 1;
 }
 
-// The Instance resource is defined in `google.spanner.admin.database.v1`.
+// The Instance resource is defined in `google.spanner.admin.instance.v1`.
 // Because this is a separate, independent API (technically), we redefine
 // the resource name pattern here.
 option (google.api.resource_definition) = {

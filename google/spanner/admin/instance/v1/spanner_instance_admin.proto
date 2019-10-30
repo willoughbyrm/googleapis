@@ -304,7 +304,7 @@ message ReplicaInfo {
 message InstanceConfig {
   option (google.api.resource) = {
     type: "spanner.googleapis.com/InstanceConfig"
-    pattern: "projects/{project}/instanceConfigs/{config}"
+    pattern: "projects/{project}/instanceConfigs/{instance_config}"
   };
 
   // A unique identifier for the instance configuration.  Values
@@ -352,7 +352,9 @@ message Instance {
   // `projects/<project>/instanceConfigs/<configuration>`. See
   // also [InstanceConfig][google.spanner.admin.instance.v1.InstanceConfig] and
   // [ListInstanceConfigs][google.spanner.admin.instance.v1.InstanceAdmin.ListInstanceConfigs].
-  string config = 2;
+  string config = 2 [(google.api.resource_reference) = {
+    type: "spanner.googleapis.com/InstanceConfig"
+  }];
 
   // Required. The descriptive name for this instance as it appears in UIs.
   // Must be unique per project and between 4 and 30 characters in length.
