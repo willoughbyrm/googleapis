@@ -274,7 +274,7 @@ message GetDatabaseRequest {
   string name = 1 [
     (google.api.field_behavior) = REQUIRED,
     (google.api.resource_reference) = {
-      type: "spanner.googleapis.com/Instance"
+      type: "spanner.googleapis.com/Database"
     }
   ];
 }
